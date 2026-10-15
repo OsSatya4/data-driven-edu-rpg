@@ -1,5 +1,12 @@
-[gd_scene format=3 uid="uid://be5773mtg8a28"]
+[gd_scene load_steps=3 format=3 uid="uid://be5773mtg8a28"]
+
+[ext_resource type="PackedScene" uid="uid://reb7s4xp0idd" path="res://Scenes/player.tscn" id="2_ly6xb"]
+[ext_resource type="PackedScene" uid="uid://baycyqokwt73m" path="res://Scenes/chest.tscn" id="3_hewda"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="Player" parent="Node2D" instance=ExtResource("2_ly6xb")]
+
+[node name="Chest" parent="Node2D" instance=ExtResource("3_hewda")]
