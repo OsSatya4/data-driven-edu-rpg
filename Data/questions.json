@@ -5,6 +5,24 @@
 			"text": "Mennyi 2+2?",
 			"options":["3", "4", "5", "22"],
 			"correct_answer_index":1
+		},
+		{
+			"id":2,
+			"text": "Mennyi 3x5?",
+			"options":["35", "40", "15", "220"],
+			"correct_answer_index":2
+		},
+		{
+			"id":3,
+			"text": "Hogy mondod angolul azt, hogy alma?",
+			"options":["apple", "blue", "peach", "pen"],
+			"correct_answer_index":0
+		},
+		{
+			"id":4,
+			"text": "Mire emlékezünk meg október 23-án?",
+			"options":["I. Szent István király koronázására", "Mohácsi vész", "Nándorfehérvári diadal", "1965-ös forradalom és szabadság harcra"],
+			"correct_answer_index":3
 		}
 	]
 }

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://be5773mtg8a28"]
+[gd_scene load_steps=5 format=3 uid="uid://be5773mtg8a28"]
 
 [ext_resource type="PackedScene" uid="uid://reb7s4xp0idd" path="res://Scenes/player.tscn" id="2_ly6xb"]
 [ext_resource type="PackedScene" uid="uid://baycyqokwt73m" path="res://Scenes/chest.tscn" id="3_hewda"]
+[ext_resource type="PackedScene" uid="uid://437uj0qsctvp" path="res://Scenes/question_ui.tscn" id="3_m8nr8"]
+[ext_resource type="Script" uid="uid://d4mtth0iyw21i" path="res://Scripts/question_ui.gd" id="4_m8nr8"]
 
 [node name="Main" type="Node2D"]
 
@@ -10,3 +12,16 @@
 [node name="Player" parent="Node2D" instance=ExtResource("2_ly6xb")]
 
 [node name="Chest" parent="Node2D" instance=ExtResource("3_hewda")]
+
+[node name="Chest2" parent="Node2D" instance=ExtResource("3_hewda")]
+position = Vector2(0, 219)
+
+[node name="Chest3" parent="Node2D" instance=ExtResource("3_hewda")]
+position = Vector2(0, -161)
+
+[node name="QuestionUI" parent="Node2D" instance=ExtResource("3_m8nr8")]
+offset_left = 17.0
+offset_top = 120.0
+offset_right = 57.0
+offset_bottom = 160.0
+script = ExtResource("4_m8nr8")
