@@ -1,10 +1,20 @@
-[gd_scene format=3 uid="uid://437uj0qsctvp"]
+[gd_scene load_steps=2 format=3 uid="uid://437uj0qsctvp"]
+
+[ext_resource type="Script" uid="uid://d4mtth0iyw21i" path="res://Scripts/question_ui.gd" id="1_wdsiw"]
 
 [node name="QuestionUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_wdsiw")
+
+[node name="TimerLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 324.0
+offset_top = 149.0
+offset_right = 378.0
+offset_bottom = 172.0
 
 [node name="Panel" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -51,3 +61,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "D"
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 3
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

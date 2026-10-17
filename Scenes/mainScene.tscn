@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://be5773mtg8a28"]
+[gd_scene load_steps=5 format=3 uid="uid://be5773mtg8a28"]
 
 [ext_resource type="PackedScene" uid="uid://reb7s4xp0idd" path="res://Scenes/player.tscn" id="2_ly6xb"]
 [ext_resource type="PackedScene" uid="uid://baycyqokwt73m" path="res://Scenes/chest.tscn" id="3_hewda"]
 [ext_resource type="PackedScene" uid="uid://437uj0qsctvp" path="res://Scenes/question_ui.tscn" id="3_m8nr8"]
-[ext_resource type="Script" uid="uid://d4mtth0iyw21i" path="res://Scripts/question_ui.gd" id="4_m8nr8"]
 [ext_resource type="PackedScene" uid="uid://lgxfkpcffcit" path="res://Scenes/game_over_ui.tscn" id="5_47rga"]
 
 [node name="Main" type="Node2D"]
@@ -13,6 +12,7 @@
 [node name="Player" parent="Node2D" instance=ExtResource("2_ly6xb")]
 
 [node name="Chest" parent="Node2D" instance=ExtResource("3_hewda")]
+position = Vector2(7, 26)
 
 [node name="Chest2" parent="Node2D" instance=ExtResource("3_hewda")]
 position = Vector2(0, 219)
@@ -20,17 +20,26 @@ position = Vector2(0, 219)
 [node name="Chest3" parent="Node2D" instance=ExtResource("3_hewda")]
 position = Vector2(0, -161)
 
-[node name="QuestionUI" parent="Node2D" instance=ExtResource("3_m8nr8")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="QuestionUI" parent="CanvasLayer" instance=ExtResource("3_m8nr8")]
 offset_left = 17.0
 offset_top = 120.0
 offset_right = 57.0
 offset_bottom = 160.0
-script = ExtResource("4_m8nr8")
 
-[node name="HealthLabel" type="Label" parent="Node2D"]
-offset_right = 103.0
-offset_bottom = 32.0
+[node name="HealthLabel" type="Label" parent="CanvasLayer"]
+offset_right = 122.0
+offset_bottom = 46.0
 text = "ÉLET: ♥ ♥ ♥"
 
-[node name="GameOverUI" parent="Node2D" instance=ExtResource("5_47rga")]
+[node name="CoinLabel" type="Label" parent="CanvasLayer"]
+offset_left = 1019.0
+offset_top = 7.0
+offset_right = 1143.0
+offset_bottom = 53.0
+text = "Arany: 0"
+
+[node name="GameOverUI" parent="CanvasLayer" instance=ExtResource("5_47rga")]
 visible = false

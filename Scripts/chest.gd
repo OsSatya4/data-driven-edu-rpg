@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var question_ui=$"../QuestionUI"
+@onready var question_ui=$"../../CanvasLayer/QuestionUI"
 
 func _on_body_entered(body: Node2D) -> void:
 	print("Valami hozzáért a ládához", body.name)
