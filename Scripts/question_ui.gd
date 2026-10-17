@@ -54,33 +54,44 @@ func show_question(questions: String, answers:Array, correct_index:int):
 #válasz ellenörzése
 func check_answer(selected_index:int):
 	var buttons=[button_1,button_2,button_3,button_4]
-	var pressed_button=buttons[selected_index]
+	var pressed_button = buttons[selected_index]
+	var correct_button = buttons[current_correct_index] 
+	
+	var tween = create_tween()
+	
 	timer.stop()
+	tween.set_loops(3) 
 	
 	for b in buttons:
-		b.disabled=true
-	
-	if selected_index==current_correct_index:
-		print("HELYES VÁLASZ!")
-		pressed_button.modulate=Color.GREEN
-		coins+=10
-		coin_label.text="Arany: "+str(coins)
-	else:
-		print("ROSSZ VÁLASZ!")	
-		pressed_button.modulate=Color.RED
+		b.disabled = true
 		
-		hp-=1
-		if hp==2:
-			health_label.text="ÉLET: ♥ ♥"
-		elif hp==1:
-			health_label.text="ÉLET: ♥ "	
-		elif  hp<=0:
-			health_label.text="VÉGE A JÁTÉKNAK"
+	if selected_index == current_correct_index:
+		print("HELYES VÁLASZ!")
+		coins += 10
+		coin_label.text = "Arany: " + str(coins)
+		
+		tween.tween_property(correct_button, "modulate", Color.GREEN, 0.2)
+		tween.tween_property(correct_button, "modulate", Color.WHITE, 0.2)
+	else:
+		print("ROSSZ VÁLASZ!")
+		hp -= 1
+		if hp == 2:
+			health_label.text = "ÉLET: ♥ ♥"
+		elif hp == 1:
+			health_label.text = "ÉLET: ♥"
+		elif hp <= 0:
+			health_label.text = "VÉGE A JÁTÉKNAK"
 			game_over_ui.show()
+			
+		pressed_button.modulate = Color.RED
+		tween.tween_property(correct_button, "modulate", Color.GREEN, 0.2)
+		tween.tween_property(correct_button, "modulate", Color.WHITE, 0.2)
 		
 	await get_tree().create_timer(1.0, true).timeout
 	hide()
-	get_tree().paused=false
+	get_tree().paused = false
+	for b in buttons:
+		b.modulate = Color.WHITE
 
 func _on_timer_timeout():
 	time_left-=1

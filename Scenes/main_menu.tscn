@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh0ql5y0rnotc"]
+[gd_scene load_steps=4 format=3 uid="uid://dh0ql5y0rnotc"]
 
 [ext_resource type="Script" uid="uid://dtweufm5n7s2n" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Theme" uid="uid://b5rtfiwmv0htl" path="res://Assets/Themes/main_theme.tres" id="2_48xlc"]
+[ext_resource type="FontFile" uid="uid://cl7inr61l2pdk" path="res://Assets/Fonts/CinzelDecorative-Regular.ttf" id="3_1ehe0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,28 +11,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_48xlc")
 script = ExtResource("1_28flt")
 
 [node name="TitelLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 345.0
-offset_top = 3.0
-offset_right = 766.0
-offset_bottom = 114.0
-theme_override_font_sizes/font_size = 50
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -217.5
+offset_right = 217.5
+offset_bottom = 111.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_1ehe0")
+theme_override_font_sizes/font_size = 75
 text = "Edu Quest"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MainMenuContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.017
-anchor_bottom = 0.031
-offset_left = 430.0
-offset_top = 144.0
-offset_right = 716.416
-offset_bottom = 502.912
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.208
+offset_top = -179.456
+offset_right = 143.208
+offset_bottom = 179.456
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PlayButton" type="Button" parent="MainMenuContainer"]
 layout_mode = 2
@@ -42,11 +53,18 @@ text = "Kilépés a játékból"
 
 [node name="SubjectMenuContainer" type="VBoxContainer" parent="."]
 visible = false
-layout_mode = 0
-offset_left = 435.0
-offset_top = 143.0
-offset_right = 739.0
-offset_bottom = 311.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -43.0
+offset_right = 144.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Subject1Button" type="Button" parent="SubjectMenuContainer"]
 layout_mode = 2
@@ -54,6 +72,7 @@ text = "Angol"
 
 [node name="BackButton" type="Button" parent="SubjectMenuContainer"]
 layout_mode = 2
+theme = ExtResource("2_48xlc")
 text = "Vissza"
 
 [connection signal="pressed" from="MainMenuContainer/PlayButton" to="." method="_on_play_button_pressed"]

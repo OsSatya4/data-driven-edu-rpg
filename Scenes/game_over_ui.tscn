@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://lgxfkpcffcit"]
+[gd_scene load_steps=3 format=3 uid="uid://lgxfkpcffcit"]
 
+[ext_resource type="Theme" uid="uid://b5rtfiwmv0htl" path="res://Assets/Themes/main_theme.tres" id="1_lth8f"]
 [ext_resource type="Script" uid="uid://cdrgyqke0c3es" path="res://Scripts/game_over_ui.gd" id="1_vvx4t"]
 
 [node name="GameOverUI" type="Control"]
@@ -7,15 +8,15 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("1_lth8f")
 script = ExtResource("1_vvx4t")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Panel" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_left = 377.0
 offset_top = 164.0
 offset_right = 763.0
 offset_bottom = 355.0
-color = Color(0.0142752, 0.0142752, 0.0142752, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -29,18 +30,18 @@ vertical_alignment = 1
 
 [node name="Restart" type="Button" parent="."]
 layout_mode = 0
-offset_left = 464.0
+offset_left = 425.0
 offset_top = 290.0
-offset_right = 557.0
-offset_bottom = 321.0
+offset_right = 581.0
+offset_bottom = 331.0
 text = "Újraindítás"
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 599.0
+offset_left = 609.0
 offset_top = 291.0
-offset_right = 663.0
-offset_bottom = 322.0
+offset_right = 703.0
+offset_bottom = 332.0
 text = "Kilépés"
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
