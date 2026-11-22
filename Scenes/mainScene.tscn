@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://be5773mtg8a28"]
 
-[ext_resource type="Texture2D" uid="uid://bpt1y48bfmdie" path="res://Assets/roguelikeSheet_transparent.png" id="1_47rga"]
+[ext_resource type="Texture2D" uid="uid://bpt1y48bfmdie" path="res://Assets/UI/roguelikeSheet_transparent.png" id="1_47rga"]
 [ext_resource type="Script" uid="uid://bbe2eavkwrool" path="res://Scenes/main_scene.gd" id="1_yyxd1"]
 [ext_resource type="PackedScene" uid="uid://reb7s4xp0idd" path="res://Scenes/player.tscn" id="2_ly6xb"]
 [ext_resource type="PackedScene" uid="uid://baycyqokwt73m" path="res://Scenes/chest.tscn" id="3_hewda"]
