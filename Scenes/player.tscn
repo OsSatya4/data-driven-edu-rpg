@@ -19,3 +19,7 @@ shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(641, 362)
+limit_left = 0
+limit_top = 0
+limit_right = 1470
+limit_bottom = 960
