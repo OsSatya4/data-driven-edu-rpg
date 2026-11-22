@@ -8,7 +8,7 @@ extends Control
 @onready var health_label=$"../HealthLabel"
 @onready var game_over_ui=$"../GameOverUI"
 @onready var coin_label=$"../CoinLabel"
-@onready var timer_label=$"TimerLabel"
+@onready var timer_label=$"Panel/TimerLabel"
 @onready var timer =$"Timer"
 
 var current_correct_index=-1 
